@@ -18,10 +18,28 @@
 #         break
 
 
-def is_even(number):
-    if number % 2 ==0:
-        return "Число четное."
-    else:
-        return "Число нечетное."
+# def is_even(number):
+#     if number % 2 ==0:
+#         return "Число четное."
+#     else:
+#         return "Число нечетное."
     
-print(is_even(123))
+# print(is_even(123))
+
+import random
+
+
+
+secret_number = random.randint(1,10)
+tries = 0
+
+while True:
+    guess = int(input("Угадайте число от 1 до 10: "))
+    tries += 1
+    if guess == secret_number:
+        print(f"Поздравляю! Вы угадали число {secret_number} за {tries} попыток.")
+        break
+    elif guess < secret_number:
+        print("Ваше число меньше загаданного.")
+    else:
+        print("Ваше число больше загаданного.")
