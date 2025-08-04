@@ -90,28 +90,28 @@
 
 
 
-numbers = []
+# numbers = []
 
-while True:
-    user_input = input("Введите число (или 'стоп'): ")
+# while True:
+#     user_input = input("Введите число (или 'стоп'): ")
 
-    if user_input.lower() == 'стоп':
-        print("Вы вышли из программы.")
-        break
+#     if user_input.lower() == 'стоп':
+#         print("Вы вышли из программы.")
+#         break
 
-    if not user_input.lstrip('-').isdigit():
-        print("Пожалуйста, введите корректное целое число.")
-        continue
+#     if not user_input.lstrip('-').isdigit():
+#         print("Пожалуйста, введите корректное целое число.")
+#         continue
 
-    number = int(user_input)
-    numbers.append(number)
+#     number = int(user_input)
+#     numbers.append(number)
 
-# Анализ чисел
-if numbers:
-    print(f"\nВы ввели {len(numbers)} чисел.")
-    print(f"Сумма: {sum(numbers)}")
-    print(f"Среднее: {sum(numbers) / len(numbers)}")
-    print(f"Максимум: {max(numbers)}")
-    print(f"Минимум: {min(numbers)}")
-else:
-    print("Вы не ввели ни одного числа.")
+# # Анализ чисел
+# if numbers:
+#     print(f"\nВы ввели {len(numbers)} чисел.")
+#     print(f"Сумма: {sum(numbers)}")
+#     print(f"Среднее: {sum(numbers) / len(numbers)}")
+#     print(f"Максимум: {max(numbers)}")
+#     print(f"Минимум: {min(numbers)}")
+# else:
+#     print("Вы не ввели ни одного числа.")
