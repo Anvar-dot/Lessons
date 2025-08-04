@@ -45,19 +45,73 @@
 #         print("Ваше число больше загаданного.")
 
 
-names = str(input("Введите имена через запятую:  "))
-def greet_names(names):
-    name_list = names.split(",")
-    return len(name_list)
+# names = str(input("Введите имена через запятую:  "))
+# def greet_names(names):
+#     name_list = names.split(",")
+#     return len(name_list)
     
     
     
-print("Количество имен:", greet_names(names))
-capitalized_list = []
-for item in names:
-    capitalized_list.append(item.capitalize())
-print(capitalized_list)
+# print("Количество имен:", greet_names(names))
+# capitalized_list = []
+# for item in names:
+#     capitalized_list.append(item.capitalize())
+# print(capitalized_list)
 # capitalized_list = [item.capitalize() for item in names]
 # print(capitalized_list)
 # names_capitalized = names.capitalize()
 # print(names_capitalized)
+
+# # total = 0
+# while True:
+#     user_input = int(input("Введите число: "))
+#     if user_input == 'stop':
+#         print("Вы вышли из программы.")
+#         break
+#     elif user_input < 0:
+#         print("Вы ввели отрицательное число. Пожалуйста, введите положительное число.")
+        
+# # number = int(user_input)
+# # total += number
+# print("Сумма введенных чисел:",sum(user_input)) 
+# print("Максимальное число:", max(user_input))
+# print("Минимальное число:", min(user_input))
+# print("Среднее число:", sum(user_input) / len(user_input))
+
+        
+# max_number = number
+# min_number = number
+# print(max_number, min_number)
+
+# numbers = [34, 67, 23, 89, 12, 45, 78, 90, 56, 43 ]
+# print(max(numbers))
+# print(min(numbers))
+# print(sum(numbers))
+
+
+
+numbers = []
+
+while True:
+    user_input = input("Введите число (или 'стоп'): ")
+
+    if user_input.lower() == 'стоп':
+        print("Вы вышли из программы.")
+        break
+
+    if not user_input.lstrip('-').isdigit():
+        print("Пожалуйста, введите корректное целое число.")
+        continue
+
+    number = int(user_input)
+    numbers.append(number)
+
+# Анализ чисел
+if numbers:
+    print(f"\nВы ввели {len(numbers)} чисел.")
+    print(f"Сумма: {sum(numbers)}")
+    print(f"Среднее: {sum(numbers) / len(numbers)}")
+    print(f"Максимум: {max(numbers)}")
+    print(f"Минимум: {min(numbers)}")
+else:
+    print("Вы не ввели ни одного числа.")
