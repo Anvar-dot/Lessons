@@ -1,40 +1,71 @@
 from abc import ABC , abstractmethod
 
-class Authentification(ABC):
-    @abstractmethod
-    def login(self):
-        pass
+class BankList(ABC):
+    def __init__(self):
+        self.__balance = 0.0
+
+    def add_balance(self, summa):
+        if summa > 0:
+            self.__balance += summa
+            print(f"Сумма пополнен на {summa} текущий баланс {self.__balance}")
+        else:
+            print("Сумма пополнения должна быть больше нуля.")
+            
+            
+    def get_balance(self, summa):
+        if summa > 0 and summa <= self.__balance:
+            self.__balance -= summa
+            print(f"Сумма снята {summa} текущий баланс {self.__balance}")
+        else:
+            print("Недостаточно средств на счете или сумма снятия должна быть больше нуля.")
+            
+    def see_balance(self):
+        return self.__balance
     
-class Login_Password(Authentification):
-    def login(self):
-        print("Вход с помощью логина и пароля.")
+mylist = BankList()
+mylist.add_balance(10000)
+mylist.get_balance(500)
+print(mylist.see_balance())
 
-class Instagram(Authentification):
-    def login(self):
-        print("Вход через Instagram.")
+now_balance = mylist.see_balance()
+print(f"Текущий баланс: {now_balance}")
+
+
+
+
+
+
+
+
+
+
+
+
+# class Authentification(ABC):
+#     @abstractmethod
+#     def login(self):
+#         pass
+    
+# class Login_Password(Authentification):
+#     def login(self):
+#         print("Вход с помощью логина и пароля.")
+
+# class Instagram(Authentification):
+#     def login(self):
+#         print("Вход через Instagram.")
         
-class Facebook(Authentification):
-    def login(self):
-        print("Вход через Facebook.")
+# class Facebook(Authentification):
+#     def login(self):
+#         print("Вход через Facebook.")
         
         
-login = Login_Password()
-instagram = Instagram()
-facebook = Facebook()
+# login = Login_Password()
+# instagram = Instagram()
+# facebook = Facebook()
 
-login.login()
-instagram.login()
-facebook.login()
-
-
-
-
-
-
-
-
-
-
+# login.login()
+# instagram.login()
+# facebook.login()
 
 
 # class Payment_System(ABC):
